@@ -92,7 +92,11 @@ public class RobotCode <clawControl> extends LinearOpMode {
         clawControl.setPosition(.8);
         telemetry.addLine("Test");
 //        armPosition = Range.
-        armPosition.setPosition(0.67);
+        armPosition.setPosition(0.79);
+//        armControl.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+//        armControl2.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+//        armControl.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+//        armControl2.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 //        System.out.println(armPosition)
 //        armPosition.setDirection(Servo.Direction.FORWARD);
 
@@ -113,6 +117,7 @@ public class RobotCode <clawControl> extends LinearOpMode {
             double clawPower;
             double clawPower2;
             double speed;
+            //double armPreset;
             //double current = clawControl.getPosition();
 
             // Choose to drive using either Tank Mode, or POV Mode
@@ -191,6 +196,59 @@ public class RobotCode <clawControl> extends LinearOpMode {
                 clawControl.setPosition(clawControl.getPosition()-0.0006);
 //                System.out.println("clawControl: " + clawControl.getPosition());
             }
+
+            if(gamepad2.right_trigger > 0)
+            {
+                clawControl.setPosition(.8);
+            }
+
+            if(gamepad2.left_trigger > 0)
+            {
+                clawControl.setPosition(0.67);
+            }
+
+////            boolean dTrue = gamepad2.a; This is not part of the working code
+//
+//            if(gamepad2.a)
+//            {
+//                if(armControl.getCurrentPosition() < -75)
+//                {
+//                    armControl.setDirection(DcMotorSimple.Direction.FORWARD);
+//                    armControl2.setDirection(armControl.getDirection());
+//                }
+//                else if(armControl.getCurrentPosition() > -75)
+//                {
+//                    armControl.setDirection(DcMotorSimple.Direction.REVERSE);
+//                    armControl2.setDirection(armControl.getDirection());
+//                }
+//                armPosition.setPosition(0.48);
+//
+//                armControl.setTargetPosition(-75);
+//                armControl2.setTargetPosition(armControl.getTargetPosition());
+//
+//                armControl.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+//                armControl2.setMode(armControl.getMode());
+//
+//                armControl.setPower(0.3);
+//                armControl2.setPower(armControl.getPower());
+//
+//                while (opModeIsActive() && (armControl.isBusy() || armControl2.isBusy()))
+//                {
+//
+//                }
+//
+//                armControl.setPower(0);
+//                armControl2.setPower(armControl.getPower());
+//
+//                armControl.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+//                armControl2.setMode(armControl.getMode());
+//            }
+//
+//            armControl.setDirection(DcMotorSimple.Direction.FORWARD);
+//            armControl2.setDirection(armControl.getDirection());
+//
+//            armControl.setPower(armPower/3);
+//            armControl2.setPower(armControl.getPower());
 
             if(gamepad1.a)
             {
