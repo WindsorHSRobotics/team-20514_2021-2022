@@ -250,6 +250,37 @@ public class RobotCode <clawControl> extends LinearOpMode {
 //            armControl.setPower(armPower/3);
 //            armControl2.setPower(armControl.getPower());
 
+//            if(armControl.getCurrentPosition() < -75)
+//            {
+//                armControl.setDirection(DcMotorSimple.Direction.FORWARD);
+//                armControl2.setDirection(armControl.getDirection());
+//            }
+//            else if(armControl.getCurrentPosition() > -75)
+//            {
+//                armControl.setDirection(DcMotorSimple.Direction.REVERSE);
+//                armControl2.setDirection(armControl.getDirection());
+//            }
+
+//          armControl.setTargetPosition(-75);
+//          armControl2.setTargetPosition(armControl.getTargetPosition());
+//
+//          armControl.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+//          armControl2.setMode(armControl.getMode());
+//
+//          armControl.setPower(0.3);
+//          armControl2.setPower(armControl.getPower());
+//
+//          while (opModeIsActive() && (armControl.isBusy() || armControl2.isBusy()))
+//          {
+//
+//          }
+//
+//          armControl.setPower(0);
+//          armControl2.setPower(armControl.getPower())
+
+//          armControl.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+//          armControl2.setMode(armControl.getMode());
+
             if(gamepad1.a)
             {
                 telemetry.addData("Arm Position: ", armPosition.getPosition());

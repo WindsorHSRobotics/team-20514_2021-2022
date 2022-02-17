@@ -37,6 +37,9 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
+import org.firstinspires.ftc.robotcore.external.hardware.camera.Camera;
+import org.firstinspires.ftc.teamcode.ConceptTensorFlowObjectDetectionWebcam;
+
 import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
 
 /**
@@ -68,12 +71,11 @@ public class Autonomous_Red extends Autonomous_Something {
     HardwarePushbot robot   = new HardwarePushbot();   // Use a Pushbot's hardware
     private ElapsedTime     runtime = new ElapsedTime();
 
-
-
     private DcMotor leftDrive = null;
     private DcMotor rightDrive = null;
     private Servo armPosition = null;
     private Servo clawControl = null;
+    private Camera duck = null;
 
     @Override
     public void runOpMode() {
@@ -90,6 +92,8 @@ public class Autonomous_Red extends Autonomous_Something {
         clawControl.setPosition(0.67);
 
         sleep(1000);
+
+//        if(duck =  )
 
         armPosition.setPosition(0.17);
 
